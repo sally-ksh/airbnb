@@ -15,6 +15,7 @@
 		98593E15283CC75D00B28960 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E14283CC75D00B28960 /* AirbnbTests.swift */; };
 		98593E1F283CC75D00B28960 /* AirbnbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E1E283CC75D00B28960 /* AirbnbUITests.swift */; };
 		98593E21283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */; };
+		B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		98593E1A283CC75D00B28960 /* AirbnbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98593E1E283CC75D00B28960 /* AirbnbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITests.swift; sourceTree = "<group>"; };
 		98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				98593DFD283CC75C00B28960 /* AppDelegate.swift */,
 				98593DFF283CC75C00B28960 /* SceneDelegate.swift */,
 				98593E01283CC75C00B28960 /* ViewController.swift */,
+				B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */,
 				98593E06283CC75D00B28960 /* Assets.xcassets */,
 				98593E08283CC75D00B28960 /* LaunchScreen.storyboard */,
 				98593E0B283CC75D00B28960 /* Info.plist */,
@@ -257,6 +260,7 @@
 				98593E02283CC75C00B28960 /* ViewController.swift in Sources */,
 				98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */,
 				98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */,
+				B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
