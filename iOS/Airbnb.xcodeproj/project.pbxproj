@@ -17,6 +17,7 @@
 		98593E21283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */; };
 		98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */; };
 		B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */; };
+		B5093539283E12D70017C8E0 /* RoomPositionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPosition.swift; sourceTree = "<group>"; };
 		B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchViewController.swift; sourceTree = "<group>"; };
+		B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPositionCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */,
+				B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */,
+				B5093539283E12D70017C8E0 /* RoomPositionCategory.swift in Sources */,
 				98593E02283CC75C00B28960 /* ViewController.swift in Sources */,
 				98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */,
 				98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */,
