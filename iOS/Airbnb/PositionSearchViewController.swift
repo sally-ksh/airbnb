@@ -2,6 +2,12 @@ import UIKit
 
 class PositionSearchViewController: UIViewController {
     
+    private let categories: [RoomPositionCategory] = [
+        .init(categoryLiteral: "서울시"),
+        .init(categoryLiteral: "부산시"),
+        .init(categoryLiteral: "제주도")
+    ]
+    
     private let samples: [RoomPosition] = [
         .init(address: "양재"),
         .init(address: "서울특별시 서초구 양재동"),
@@ -17,6 +23,7 @@ class PositionSearchViewController: UIViewController {
     
     private lazy var searchContoller: UISearchController = {
         let searchController = UISearchController()
+        searchController.searchBar.placeholder = "어디로 여행가세요?"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.delegate = self
@@ -55,7 +62,7 @@ class PositionSearchViewController: UIViewController {
 extension PositionSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if !isSearching {
-            return samples.count
+            return categories.count
             
         }
         return filteredSamples.count
@@ -64,7 +71,7 @@ extension PositionSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         if !isSearching {
-            cell.textLabel?.text = samples[indexPath.row].address
+            cell.textLabel?.text = categories[indexPath.row].categoryLiteral
             return cell
             
         }
