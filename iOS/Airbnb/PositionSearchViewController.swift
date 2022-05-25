@@ -76,6 +76,12 @@ extension PositionSearchViewController: UISearchResultsUpdating {
         guard let searchBarText = searchController.searchBar.text else {
             return
         }
+        
+        if searchBarText.count <= 0 {
+            self.isSearching = false
+            return
+        }
+        
         self.filteredSamples = []
         for sample in samples {
             if sample.address.contains(searchBarText) {
