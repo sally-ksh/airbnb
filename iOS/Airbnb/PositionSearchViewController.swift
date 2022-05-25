@@ -3,15 +3,20 @@ import UIKit
 class PositionSearchViewController: UIViewController {
     
     private let samples: [String] = ["양재", "서울특별시 서초구 양재동", "양재 시민의 숲", "양재IC"]
+    private var filteredSamples = [String]()
+    private var isSearching = false
     
-    private let searchContoller: UISearchController = {
+    
+    private lazy var searchContoller: UISearchController = {
         let searchController = UISearchController()
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchResultsUpdater = self
         return searchController
     }()
     
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -37,14 +42,40 @@ class PositionSearchViewController: UIViewController {
     
 }
 
-extension PositionSearchViewController: UISearchBarDelegate {
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        return true
+
+extension PositionSearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if !isSearching {
+            return samples.count
+            
+        }
+        return filteredSamples.count
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //검색어 입력 후 데이터 가져오는 로직 필요
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        if !isSearching {
+            cell.textLabel?.text = samples[indexPath.row]
+            return cell
+            
+        }
+        cell.textLabel?.text = filteredSamples[indexPath.row]
+        return cell
     }
 }
 
+extension PositionSearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchBarText = searchController.searchBar.text else {
+            return
+        }
+        self.filteredSamples = []
+        for sample in samples {
+            if sample.contains(searchBarText) {
+                self.filteredSamples.append(sample)
+            }
+        }
+        self.isSearching = true
+        tableView.reloadData()
+    }
+}
