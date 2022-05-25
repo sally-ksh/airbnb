@@ -39,23 +39,14 @@ class PositionSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        setSearchBarLayout()
+        self.view = tableView
+        setNavigationBar()
     }
     
-    private func setSearchBarLayout() {
-        self.navigationItem.title = "search"
+    private func setNavigationBar() {
+        self.navigationItem.title = "숙소 찾기"
         self.navigationItem.searchController = searchContoller
-        
-        self.view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        ])
     }
-    
 }
 
 
