@@ -32,8 +32,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //검색어 입력 후 데이터 가져오는 로직 필요
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        let navigationController = UINavigationController(rootViewController: PositionSearchViewController())
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: false)
+        return true
     }
 }
 
