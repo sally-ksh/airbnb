@@ -1,30 +1,14 @@
 import UIKit
 
-
-struct Position {
-    let address: String
-    private let category: String // 주소가 포함된 시,군,구
-    private let latitude: Float // 소수점 14자리
-    private let longitude: Float
-    
-    init(address: String) {
-        self.address = address
-        self.category = "서울시"
-        self.latitude = 0.0
-        self.longitude = 0.0
-    }
-}
-
-
 class PositionSearchViewController: UIViewController {
     
-    private let samples: [Position] = [
+    private let samples: [RoomPosition] = [
         .init(address: "양재"),
         .init(address: "서울특별시 서초구 양재동"),
         .init(address: "양재 시민의 숲"),
         .init(address: "양재IC")
     ]
-    private var filteredSamples = [Position]()
+    private var filteredSamples = [RoomPosition]()
     private var isSearching: Bool = false {
         didSet {
             self.tableView.reloadData()
