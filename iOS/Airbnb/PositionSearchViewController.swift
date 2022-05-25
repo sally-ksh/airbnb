@@ -52,21 +52,12 @@ class PositionSearchViewController: UIViewController {
 
 extension PositionSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !isSearching {
-            return categories.count
-            
-        }
-        return filteredSamples.count
+        return isSearching ? filteredSamples.count : categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        if !isSearching {
-            cell.textLabel?.text = categories[indexPath.row].categoryLiteral
-            return cell
-            
-        }
-        cell.textLabel?.text = filteredSamples[indexPath.row].address
+        cell.textLabel?.text = isSearching ? filteredSamples[indexPath.row].address : categories[indexPath.row].categoryLiteral
         return cell
     }
 }
