@@ -24,6 +24,9 @@ class SearchResultRoomsViewController: UIViewController {
         button.setTitle("지도", for: .normal)
         button.backgroundColor = .brown
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addAction(UIAction(handler: { [weak self] _ in
+            self?.navigationController?.pushViewController(MapViewController(), animated: true)
+        }), for: .touchDown)
         return button
     }()
     
