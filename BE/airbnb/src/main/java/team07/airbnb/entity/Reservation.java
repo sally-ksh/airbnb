@@ -1,31 +1,38 @@
 package team07.airbnb.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import lombok.Getter;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Getter
+@NoArgsConstructor
+@EqualsAndHashCode(of = "RESERVATION_ID")
 public class Reservation {
 
-    @Id @GeneratedValue
-    @Column(name = "RESERVATION_ID")
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "reservation_no")
+    private Long reservationId;
     @ManyToOne
-    @JoinColumn(name = "ROOM_ID")
+    @JoinColumn(name = "accomodation_id")
     private Room room;
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
-    private Date checkinDate;
-    private Date checkoutDate;
+    @Column(name = "start_at")
+    private LocalDate checkinDate;
+    @Column(name = "end_at")
+    private LocalDate checkoutDate;
+    @Column(name = "number_of_guest")
     private int guestAmount;
+    @Column(name = "number_of_infant")
     private int infantAmount;
-    private int totalPrice;
+    private int price;
 
 }

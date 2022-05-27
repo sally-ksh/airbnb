@@ -5,19 +5,24 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import lombok.Getter;
+import javax.persistence.Table;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Getter
+@EqualsAndHashCode(of = "ROOM_ID")
+@Table(indexes = {@Index(columnList = "address")})
+@NoArgsConstructor
 public class Room {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ROOM_ID")
     private Long id;
-    //@Column(name = "HOST_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "HOST_ID")
     private User host;
@@ -29,6 +34,5 @@ public class Room {
     private String composition;
     private int guestAmount;
     private int infantAmount;
-
 
 }
