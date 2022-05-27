@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         GMSServices.provideAPIKey(PrivateStorage.mapApiKey)
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        window.rootViewController = UINavigationController(rootViewController: HomeViewController())
         window.makeKeyAndVisible()
         self.window = window
     }

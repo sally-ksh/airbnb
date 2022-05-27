@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private lazy var searchBar: UISearchBar = {
         let searchBar:UISearchBar = UISearchBar()
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UISearchBarDelegate {
+extension HomeViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         self.navigationController?.pushViewController(PositionSearchViewController(), animated: false)

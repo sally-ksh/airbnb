@@ -11,7 +11,7 @@
 		983A6005283F6CF600DDB517 /* PositionSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */; };
 		98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593DFD283CC75C00B28960 /* AppDelegate.swift */; };
 		98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593DFF283CC75C00B28960 /* SceneDelegate.swift */; };
-		98593E02283CC75C00B28960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E01283CC75C00B28960 /* ViewController.swift */; };
+		98593E02283CC75C00B28960 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E01283CC75C00B28960 /* HomeViewController.swift */; };
 		98593E07283CC75D00B28960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98593E06283CC75D00B28960 /* Assets.xcassets */; };
 		98593E0A283CC75D00B28960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98593E08283CC75D00B28960 /* LaunchScreen.storyboard */; };
 		98593E15283CC75D00B28960 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E14283CC75D00B28960 /* AirbnbTests.swift */; };
@@ -56,7 +56,7 @@
 		98593DFA283CC75C00B28960 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98593DFD283CC75C00B28960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98593DFF283CC75C00B28960 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98593E01283CC75C00B28960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98593E01283CC75C00B28960 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		98593E06283CC75D00B28960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98593E09283CC75D00B28960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98593E0B283CC75D00B28960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,23 +129,15 @@
 		98593DFC283CC75C00B28960 /* Airbnb */ = {
 			isa = PBXGroup;
 			children = (
+				B576AE0E28406ECA00B21D80 /* Home */,
+				B576AE0D28406EAB00B21D80 /* Supportings */,
+				B576AE0C28406E9600B21D80 /* SearchResult */,
+				B576AE0B28406E6600B21D80 /* Search */,
 				98F11304283F27B200009232 /* Common */,
 				98E0C688283DFAB000C5BDF9 /* Entity */,
-				98593DFD283CC75C00B28960 /* AppDelegate.swift */,
-				98593DFF283CC75C00B28960 /* SceneDelegate.swift */,
-				98593E01283CC75C00B28960 /* ViewController.swift */,
-				B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */,
-				98F11302283F11B700009232 /* PositionSearchModel.swift */,
-				986B0059283F86C2008E3EEB /* SearchResultRoomsViewController.swift */,
-				B509353A283F68C50017C8E0 /* ConditionSettingViewController.swift */,
-				B5093543283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift */,
-				B5093547283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift */,
-				B5093545283FD50D0017C8E0 /* ConditionCategory.swift */,
-				B570BC52283FF97C008BBC79 /* MapViewController.swift */,
 				98593E06283CC75D00B28960 /* Assets.xcassets */,
 				98593E08283CC75D00B28960 /* LaunchScreen.storyboard */,
 				98593E0B283CC75D00B28960 /* Info.plist */,
-				983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */,
 				B5E098E828406B8D00A69BDF /* PrivateStorage.swift */,
 			);
 			path = Airbnb;
@@ -184,6 +176,46 @@
 				98F11305283F27C000009232 /* Observable.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B576AE0B28406E6600B21D80 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */,
+				98F11302283F11B700009232 /* PositionSearchModel.swift */,
+				983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */,
+				B509353A283F68C50017C8E0 /* ConditionSettingViewController.swift */,
+				B5093543283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift */,
+				B5093547283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift */,
+				B5093545283FD50D0017C8E0 /* ConditionCategory.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B576AE0C28406E9600B21D80 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				B570BC52283FF97C008BBC79 /* MapViewController.swift */,
+				986B0059283F86C2008E3EEB /* SearchResultRoomsViewController.swift */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		B576AE0D28406EAB00B21D80 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				98593DFD283CC75C00B28960 /* AppDelegate.swift */,
+				98593DFF283CC75C00B28960 /* SceneDelegate.swift */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		B576AE0E28406ECA00B21D80 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				98593E01283CC75C00B28960 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +363,7 @@
 				98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */,
 				B5093539283E12D70017C8E0 /* RoomPositionCategory.swift in Sources */,
 				B5093548283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift in Sources */,
-				98593E02283CC75C00B28960 /* ViewController.swift in Sources */,
+				98593E02283CC75C00B28960 /* HomeViewController.swift in Sources */,
 				983A6005283F6CF600DDB517 /* PositionSearchFactory.swift in Sources */,
 				98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */,
 				98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */,
