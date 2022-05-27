@@ -1,4 +1,4 @@
-package team07.airbnb.entity;
+package team07.airbnb.room;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -13,9 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import team07.airbnb.address.Address;
+import team07.airbnb.user.User;
 
 @Entity
-@EqualsAndHashCode(of = "ROOM_ID")
+@EqualsAndHashCode(of = "id")
 @Table(indexes = {@Index(columnList = "address")})
 @NoArgsConstructor
 public class Room {

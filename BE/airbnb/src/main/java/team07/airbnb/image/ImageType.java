@@ -1,4 +1,4 @@
-package team07.airbnb.entity;
+package team07.airbnb.image;
 
 import lombok.Getter;
 
