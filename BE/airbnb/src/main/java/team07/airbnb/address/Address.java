@@ -1,4 +1,4 @@
-package team07.airbnb.entity;
+package team07.airbnb.address;
 
 import javax.persistence.Embeddable;
 

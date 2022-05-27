@@ -1,4 +1,4 @@
-package team07.airbnb.entity;
+package team07.airbnb.review;
 
 import java.time.LocalDate;
 import javax.persistence.Column;
@@ -10,29 +10,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import team07.airbnb.room.Room;
+import team07.airbnb.user.User;
 
 @Entity
 @NoArgsConstructor
-@EqualsAndHashCode(of = "RESERVATION_ID")
-public class Reservation {
+@EqualsAndHashCode(of = "id;")
+public class Review {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reservation_no")
-    private Long reservationId;
+    @Column(name = "REVIEW_ID")
+    private Long id;
     @ManyToOne
-    @JoinColumn(name = "accomodation_id")
+    @JoinColumn(name = "ROOM_ID")
     private Room room;
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
-    @Column(name = "start_at")
-    private LocalDate checkinDate;
-    @Column(name = "end_at")
-    private LocalDate checkoutDate;
-    @Column(name = "number_of_guest")
-    private int guestAmount;
-    @Column(name = "number_of_infant")
-    private int infantAmount;
-    private int price;
 
+    private int starRating;
+    private String content;
+    private LocalDate writeDate;
 }
