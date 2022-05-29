@@ -7,19 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		983A6003283F468D00DDB517 /* PositionSearchModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983A6002283F468D00DDB517 /* PositionSearchModelTest.swift */; };
+		983A6005283F6CF600DDB517 /* PositionSearchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */; };
 		98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593DFD283CC75C00B28960 /* AppDelegate.swift */; };
 		98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593DFF283CC75C00B28960 /* SceneDelegate.swift */; };
-		98593E02283CC75C00B28960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E01283CC75C00B28960 /* ViewController.swift */; };
+		98593E02283CC75C00B28960 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E01283CC75C00B28960 /* HomeViewController.swift */; };
 		98593E07283CC75D00B28960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98593E06283CC75D00B28960 /* Assets.xcassets */; };
 		98593E0A283CC75D00B28960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98593E08283CC75D00B28960 /* LaunchScreen.storyboard */; };
 		98593E15283CC75D00B28960 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E14283CC75D00B28960 /* AirbnbTests.swift */; };
 		98593E1F283CC75D00B28960 /* AirbnbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E1E283CC75D00B28960 /* AirbnbUITests.swift */; };
 		98593E21283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */; };
+		986B005A283F86C2008E3EEB /* SearchResultRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B0059283F86C2008E3EEB /* SearchResultRoomsViewController.swift */; };
 		98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */; };
 		98F11303283F11B700009232 /* PositionSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F11302283F11B700009232 /* PositionSearchModel.swift */; };
 		98F11306283F27C000009232 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F11305283F27C000009232 /* Observable.swift */; };
 		B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */; };
 		B5093539283E12D70017C8E0 /* RoomPositionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */; };
+		B509353B283F68C50017C8E0 /* ConditionSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B509353A283F68C50017C8E0 /* ConditionSettingViewController.swift */; };
+		B5093544283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5093543283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift */; };
+		B5093546283FD50D0017C8E0 /* ConditionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5093545283FD50D0017C8E0 /* ConditionCategory.swift */; };
+		B5093548283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5093547283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift */; };
+		B570BC4F283FF8F1008BBC79 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = B570BC4E283FF8F1008BBC79 /* GoogleMaps */; };
+		B570BC51283FF8F1008BBC79 /* GooglePlaces in Frameworks */ = {isa = PBXBuildFile; productRef = B570BC50283FF8F1008BBC79 /* GooglePlaces */; };
+		B570BC53283FF97C008BBC79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570BC52283FF97C008BBC79 /* MapViewController.swift */; };
+		B5E098E928406B8D00A69BDF /* PrivateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E098E828406B8D00A69BDF /* PrivateStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		983A6002283F468D00DDB517 /* PositionSearchModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchModelTest.swift; sourceTree = "<group>"; };
+		983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchFactory.swift; sourceTree = "<group>"; };
 		98593DFA283CC75C00B28960 /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98593DFD283CC75C00B28960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98593DFF283CC75C00B28960 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98593E01283CC75C00B28960 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98593E01283CC75C00B28960 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		98593E06283CC75D00B28960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98593E09283CC75D00B28960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98593E0B283CC75D00B28960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,11 +65,18 @@
 		98593E1A283CC75D00B28960 /* AirbnbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98593E1E283CC75D00B28960 /* AirbnbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITests.swift; sourceTree = "<group>"; };
 		98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		986B0059283F86C2008E3EEB /* SearchResultRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultRoomsViewController.swift; sourceTree = "<group>"; };
 		98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPosition.swift; sourceTree = "<group>"; };
 		98F11302283F11B700009232 /* PositionSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchModel.swift; sourceTree = "<group>"; };
 		98F11305283F27C000009232 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchViewController.swift; sourceTree = "<group>"; };
 		B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPositionCategory.swift; sourceTree = "<group>"; };
+		B509353A283F68C50017C8E0 /* ConditionSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingViewController.swift; sourceTree = "<group>"; };
+		B5093543283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingTableViewCell.swift; sourceTree = "<group>"; };
+		B5093545283FD50D0017C8E0 /* ConditionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionCategory.swift; sourceTree = "<group>"; };
+		B5093547283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionSettingTableViewDataSource.swift; sourceTree = "<group>"; };
+		B570BC52283FF97C008BBC79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B5E098E828406B8D00A69BDF /* PrivateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B570BC4F283FF8F1008BBC79 /* GoogleMaps in Frameworks */,
+				B570BC51283FF8F1008BBC79 /* GooglePlaces in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,16 +129,16 @@
 		98593DFC283CC75C00B28960 /* Airbnb */ = {
 			isa = PBXGroup;
 			children = (
+				B576AE0E28406ECA00B21D80 /* Home */,
+				B576AE0D28406EAB00B21D80 /* Supportings */,
+				B576AE0C28406E9600B21D80 /* SearchResult */,
+				B576AE0B28406E6600B21D80 /* Search */,
 				98F11304283F27B200009232 /* Common */,
 				98E0C688283DFAB000C5BDF9 /* Entity */,
-				98593DFD283CC75C00B28960 /* AppDelegate.swift */,
-				98593DFF283CC75C00B28960 /* SceneDelegate.swift */,
-				98593E01283CC75C00B28960 /* ViewController.swift */,
-				B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */,
-				98F11302283F11B700009232 /* PositionSearchModel.swift */,
 				98593E06283CC75D00B28960 /* Assets.xcassets */,
 				98593E08283CC75D00B28960 /* LaunchScreen.storyboard */,
 				98593E0B283CC75D00B28960 /* Info.plist */,
+				B5E098E828406B8D00A69BDF /* PrivateStorage.swift */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -125,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				98593E14283CC75D00B28960 /* AirbnbTests.swift */,
+				983A6002283F468D00DDB517 /* PositionSearchModelTest.swift */,
 			);
 			path = AirbnbTests;
 			sourceTree = "<group>";
@@ -155,6 +178,46 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		B576AE0B28406E6600B21D80 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B509352F283DCB490017C8E0 /* PositionSearchViewController.swift */,
+				98F11302283F11B700009232 /* PositionSearchModel.swift */,
+				983A6004283F6CF600DDB517 /* PositionSearchFactory.swift */,
+				B509353A283F68C50017C8E0 /* ConditionSettingViewController.swift */,
+				B5093543283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift */,
+				B5093547283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift */,
+				B5093545283FD50D0017C8E0 /* ConditionCategory.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B576AE0C28406E9600B21D80 /* SearchResult */ = {
+			isa = PBXGroup;
+			children = (
+				B570BC52283FF97C008BBC79 /* MapViewController.swift */,
+				986B0059283F86C2008E3EEB /* SearchResultRoomsViewController.swift */,
+			);
+			path = SearchResult;
+			sourceTree = "<group>";
+		};
+		B576AE0D28406EAB00B21D80 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				98593DFD283CC75C00B28960 /* AppDelegate.swift */,
+				98593DFF283CC75C00B28960 /* SceneDelegate.swift */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		B576AE0E28406ECA00B21D80 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				98593E01283CC75C00B28960 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +234,10 @@
 			dependencies = (
 			);
 			name = Airbnb;
+			packageProductDependencies = (
+				B570BC4E283FF8F1008BBC79 /* GoogleMaps */,
+				B570BC50283FF8F1008BBC79 /* GooglePlaces */,
+			);
 			productName = Airbnb;
 			productReference = 98593DFA283CC75C00B28960 /* Airbnb.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +310,9 @@
 				Base,
 			);
 			mainGroup = 98593DF1283CC75C00B28960;
+			packageReferences = (
+				B570BC4D283FF8F1008BBC79 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+			);
 			productRefGroup = 98593DFB283CC75C00B28960 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,13 +356,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F11306283F27C000009232 /* Observable.swift in Sources */,
+				B509353B283F68C50017C8E0 /* ConditionSettingViewController.swift in Sources */,
+				B5093546283FD50D0017C8E0 /* ConditionCategory.swift in Sources */,
 				98F11303283F11B700009232 /* PositionSearchModel.swift in Sources */,
+				986B005A283F86C2008E3EEB /* SearchResultRoomsViewController.swift in Sources */,
 				98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */,
 				B5093539283E12D70017C8E0 /* RoomPositionCategory.swift in Sources */,
-				98593E02283CC75C00B28960 /* ViewController.swift in Sources */,
+				B5093548283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift in Sources */,
+				98593E02283CC75C00B28960 /* HomeViewController.swift in Sources */,
+				983A6005283F6CF600DDB517 /* PositionSearchFactory.swift in Sources */,
 				98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */,
 				98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */,
 				B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */,
+				B5093544283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift in Sources */,
+				B570BC53283FF97C008BBC79 /* MapViewController.swift in Sources */,
+				B5E098E928406B8D00A69BDF /* PrivateStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983A6003283F468D00DDB517 /* PositionSearchModelTest.swift in Sources */,
 				98593E15283CC75D00B28960 /* AirbnbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,13 +540,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,13 +568,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3PWYBKFUK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,6 +701,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B570BC4D283FF8F1008BBC79 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B570BC4E283FF8F1008BBC79 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B570BC4D283FF8F1008BBC79 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		B570BC50283FF8F1008BBC79 /* GooglePlaces */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B570BC4D283FF8F1008BBC79 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GooglePlaces;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98593DF2283CC75C00B28960 /* Project object */;
 }
