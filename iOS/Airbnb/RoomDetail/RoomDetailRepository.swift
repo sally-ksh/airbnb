@@ -35,4 +35,15 @@ struct RoomDetailRepository {
             }
         }
     }
+    
+    func fetchImage(_ completion: @escaping (Data) -> Void) {
+        networkHandler.request(endPoint: .randomImage, method: .get, contentType: .image, body: nil) { result in
+            switch result {
+            case .success(let data):
+                completion(data)
+            case .failure(let error):
+                logger.error("\(error.localizedDescription)")
+            }
+        }
+    }
 }

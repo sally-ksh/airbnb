@@ -19,6 +19,24 @@ struct RoomDetail: Codable {
     let roomDescription: String // room
     let priceForOneDay: Int
     
+    init() {
+        roomId = 0
+        images = []
+        isWished = false
+        title = ""
+        averageOfStar = 0.0
+        numberOfReviews = 0
+        address = ""
+        hostName = ""
+        profileOfHost = ""
+        maxNumberOfPeople = 0
+        styleOfRoom = "원룸"
+        bedCount = 0
+        bathroomCount = 0
+        roomDescription = ""
+        priceForOneDay = 0
+    }
+    
     init(from decoder:Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.roomDescription = try container.decode(String.self, forKey: .roomDescription)

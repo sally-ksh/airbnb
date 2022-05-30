@@ -2,11 +2,37 @@ import UIKit
 
 final class RoomDetailViewController: UIViewController {
     
+    private let model: RoomDetailModel
+    
+    init(model: RoomDetailModel) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupViews()
+        model.initialize()
+        bindView()
     }
+    
+    private func bindView() {
+        self.model.roomDetail.bind { [weak self] data in
+            self?.titleLabel.text = data.title
+        }
+        
+        self.model.image.bind { [weak self] imageData in
+            self?.imageView.image = UIImage(data: imageData)
+        }
+    }
+    
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
