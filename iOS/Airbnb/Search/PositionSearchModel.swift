@@ -9,7 +9,7 @@ class PositionSearchModel {
     
     init(_ mockFactory: PositionSearchFactory) {
         self.categories = mockFactory.categories
-        self.samples = mockFactory.datas
+        self.samples = mockFactory.dataList
     }
     
     func rowsCount() -> Int {
