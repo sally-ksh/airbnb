@@ -18,5 +18,6 @@ target 'Airbnb' do
 
   pod 'GoogleMaps', '6.2.1.0'
   pod 'GooglePlaces', '6.2.1.0'
+  pod 'SwiftLint'
 
 end
