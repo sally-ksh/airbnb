@@ -1,7 +1,7 @@
 import UIKit
 
 
-class AccomodationListViewController: UIViewController {
+class RoomListViewController: UIViewController {
 
     private let dummy = ["cozy house", "private room", "party room"]
     
@@ -63,7 +63,7 @@ class AccomodationListViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension AccomodationListViewController: UICollectionViewDataSource {
+extension RoomListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -74,9 +74,9 @@ extension AccomodationListViewController: UICollectionViewDataSource {
     }
 }
 
-extension AccomodationListViewController: UICollectionViewDelegate {
+extension RoomListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = AccomodationDetailViewController()
+        let viewController = RoomDetailViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

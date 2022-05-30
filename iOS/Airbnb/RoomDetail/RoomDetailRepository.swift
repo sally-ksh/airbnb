@@ -15,14 +15,14 @@ struct JsonHandler {
 }
 
 
-struct AccomodationDetailRepository {
+struct RoomDetailRepository {
     private let networkHandler = NetworkHandler()
     private let jsonHandler = JsonHandler()
     private let logger = Logger()
     
     
     func fetch(roomId: UniqueID, completion: @escaping (RoomDetail) -> Void) {
-        networkHandler.request(endPoint: .accomodationDetail(roomId: roomId), method: .get, contentType: .json, body: nil) { result in
+        networkHandler.request(endPoint: .roomDetail(roomId: roomId), method: .get, contentType: .json, body: nil) { result in
             switch result {
             case .success(let data):
                 guard let decodedData = jsonHandler.convertJsonToObject(from: data, to: RoomDetail.self) else {

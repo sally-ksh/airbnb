@@ -3,38 +3,7 @@ import Alamofire
 import OSLog
 
 
-enum ContentType {
-    case json
-    case image
-    var value: String {
-        switch self {
-        case .json:
-            return "application/json"
-        case .image:
-            return "image/png"
-        }
-    }
-}
 
-enum HttpMethod {
-    case get
-    case post
-}
-
-enum EndPoint {
-    case accomodationDetail(roomId: UniqueID)
-    case list
-    
-    static let origin: String = "https://68ba057f-eb57-4bad-be9b-d220ac63ca31.mock.pstmn.io"
-    var path: String {
-        switch self {
-        case .accomodationDetail(let roomId):
-            return "\(EndPoint.origin)/airbnb/room/\(roomId)"
-        case .list:
-            return "\(EndPoint.origin)/airbnb/search/rooms"
-        }
-    }
-}
 
 struct NetworkHandler {
     

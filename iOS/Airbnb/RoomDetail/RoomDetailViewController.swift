@@ -1,6 +1,6 @@
 import UIKit
 
-final class AccomodationDetailViewController: UIViewController {
+final class RoomDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
