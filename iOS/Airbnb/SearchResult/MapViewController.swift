@@ -58,14 +58,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         addMarker(coordinate: mapView.camera.target, title: "코드스쿼드", snippet: "코드스쿼드")
     }
     
-    private func moveToCurrentLocation() {
-        if markers.count >= 2 { markers.popLast()?.map = nil }
-        guard let coordinate = locationManager.location?.coordinate else { return }
-        let camera = GMSCameraPosition(target: coordinate, zoom: 16)
-        mapView.camera = camera
-        
-        addMarker(coordinate: coordinate, title: "현재 위치", snippet: "현재 위치")
-    }
     
     //위치값 입력받아서, 해당 위치에 마커 추가
     private func addMarker(coordinate: CLLocationCoordinate2D, title: String, snippet: String) {
