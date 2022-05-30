@@ -38,15 +38,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setLayout() {
-        mapBackgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        mapBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        mapBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        mapBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        mapView.topAnchor.constraint(equalTo: mapBackgroundView.topAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: mapBackgroundView.bottomAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: mapBackgroundView.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: mapBackgroundView.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            mapBackgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            mapBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mapBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mapBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            mapView.topAnchor.constraint(equalTo: mapBackgroundView.topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: mapBackgroundView.bottomAnchor),
+            mapView.leadingAnchor.constraint(equalTo: mapBackgroundView.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: mapBackgroundView.trailingAnchor)
+        ])
     }
     
     private func configureMap() {
