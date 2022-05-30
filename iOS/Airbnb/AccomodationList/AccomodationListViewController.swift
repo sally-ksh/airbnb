@@ -1,7 +1,7 @@
 import UIKit
 
 
-class SearchResultRoomsViewController: UIViewController {
+class AccomodationListViewController: UIViewController {
 
     private let dummy = ["cozy house", "private room", "party room"]
     
@@ -62,7 +62,7 @@ class SearchResultRoomsViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension SearchResultRoomsViewController: UICollectionViewDataSource {
+extension AccomodationListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
