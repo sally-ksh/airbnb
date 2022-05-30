@@ -16,6 +16,7 @@ class AccomodationListViewController: UIViewController {
         collectionView.backgroundColor = .orange
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
     
@@ -72,6 +73,14 @@ extension AccomodationListViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+extension AccomodationListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = AccomodationDetailViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 
 // MARK: - SearchResultRoomCell
 class SearchResultRoomCell: UICollectionViewCell {

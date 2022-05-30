@@ -4,6 +4,7 @@ final class AccomodationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         setupViews()
     }
     
