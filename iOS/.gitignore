@@ -14,8 +14,8 @@ Pods/
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,visualstudiocode
 
-### PrivateStorage.swift ###
-*/PrivateStorage.swift
+### GoogleMapKey ###
+ConfigProperty.plist
 
 ### DS_Store ###
 */.DS_Store
