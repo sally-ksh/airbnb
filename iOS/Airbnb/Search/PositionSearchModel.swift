@@ -28,7 +28,7 @@ class PositionSearchModel {
         guard let searchText = searchText else {
             return
         }
-        if searchText.count <= 0 {
+        if searchText.isEmpty {
             self.isSearching.value = false
             return
         }

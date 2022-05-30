@@ -11,12 +11,12 @@ class SearchResultRoomsViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: self.view.frame.size.width, height: 200)
         
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(SearchResultRoomCell.self, forCellWithReuseIdentifier: "SearchResultRoomCell")
-        cv.backgroundColor = .orange
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.dataSource = self
-        return cv
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(SearchResultRoomCell.self, forCellWithReuseIdentifier: "SearchResultRoomCell")
+        collectionView.backgroundColor = .orange
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        return collectionView
     }()
     
     private lazy var mapButton: UIButton = {
@@ -68,7 +68,7 @@ extension SearchResultRoomsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultRoomCell", for: indexPath) as!SearchResultRoomCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultRoomCell", for: indexPath) as? SearchResultRoomCell else { return UICollectionViewCell() }
         return cell
     }
 }

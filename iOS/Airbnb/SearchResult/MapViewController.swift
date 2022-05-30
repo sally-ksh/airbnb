@@ -91,6 +91,5 @@ extension MapViewController: GMSMapViewDelegate {
         let topRight = mapView.projection.visibleRegion().farRight
         let bottomleft = mapView.projection.visibleRegion().nearLeft
         let bottomRight = mapView.projection.visibleRegion().nearRight
-        print("좌측 상단:\(topLeft.longitude),\(topLeft.latitude)\n우측 상단:\(topRight.longitude),\(topRight.latitude)\n좌측 하단:\(bottomleft.longitude),\(bottomleft.latitude)\n우측 하단:\(bottomRight.longitude),\(bottomRight.latitude)")
     }
 }
