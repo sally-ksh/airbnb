@@ -23,6 +23,8 @@
 		98593E1F283CC75D00B28960 /* AirbnbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E1E283CC75D00B28960 /* AirbnbUITests.swift */; };
 		98593E21283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */; };
 		986B005A283F86C2008E3EEB /* AccomodationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986B0059283F86C2008E3EEB /* AccomodationListViewController.swift */; };
+		989934A22844E98600317A84 /* AccomodationDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989934A12844E98600317A84 /* AccomodationDetailRepository.swift */; };
+		989934A42844F23300317A84 /* RoomDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989934A32844F23300317A84 /* RoomDetail.swift */; };
 		98E0C687283DF8DA00C5BDF9 /* RoomPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */; };
 		98F11303283F11B700009232 /* PositionSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F11302283F11B700009232 /* PositionSearchModel.swift */; };
 		98F11306283F27C000009232 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F11305283F27C000009232 /* Observable.swift */; };
@@ -78,6 +80,8 @@
 		98593E1E283CC75D00B28960 /* AirbnbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITests.swift; sourceTree = "<group>"; };
 		98593E20283CC75D00B28960 /* AirbnbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		986B0059283F86C2008E3EEB /* AccomodationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomodationListViewController.swift; sourceTree = "<group>"; };
+		989934A12844E98600317A84 /* AccomodationDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomodationDetailRepository.swift; sourceTree = "<group>"; };
+		989934A32844F23300317A84 /* RoomDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetail.swift; sourceTree = "<group>"; };
 		98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPosition.swift; sourceTree = "<group>"; };
 		98F11302283F11B700009232 /* PositionSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSearchModel.swift; sourceTree = "<group>"; };
 		98F11305283F27C000009232 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				982F765B2844C33F00DF8523 /* NetworkHandler.swift */,
+				989934A12844E98600317A84 /* AccomodationDetailRepository.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			children = (
 				98E0C686283DF8DA00C5BDF9 /* RoomPosition.swift */,
 				B5093538283E12D70017C8E0 /* RoomPositionCategory.swift */,
+				989934A32844F23300317A84 /* RoomDetail.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -591,9 +597,11 @@
 				B5093548283FEA200017C8E0 /* ConditionSettingTableViewDataSource.swift in Sources */,
 				98593E02283CC75C00B28960 /* HomeViewController.swift in Sources */,
 				983A6005283F6CF600DDB517 /* PositionSearchFactory.swift in Sources */,
+				989934A22844E98600317A84 /* AccomodationDetailRepository.swift in Sources */,
 				98593DFE283CC75C00B28960 /* AppDelegate.swift in Sources */,
 				98593E00283CC75C00B28960 /* SceneDelegate.swift in Sources */,
 				B5093530283DCB490017C8E0 /* PositionSearchViewController.swift in Sources */,
+				989934A42844F23300317A84 /* RoomDetail.swift in Sources */,
 				B5093544283FD3F90017C8E0 /* ConditionSettingTableViewCell.swift in Sources */,
 				B570BC53283FF97C008BBC79 /* MapViewController.swift in Sources */,
 				B5E098E928406B8D00A69BDF /* PrivateStorage.swift in Sources */,
