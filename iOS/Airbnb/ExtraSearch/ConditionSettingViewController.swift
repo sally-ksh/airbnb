@@ -2,7 +2,7 @@ import UIKit
 
 final class ConditionSettingViewController: UIViewController {
     
-    private var model: ConditionSettingModel?
+    private var useCase: ConditionSettingUseCase?
     
     private lazy var dummyView: UIView = {
         let view = UIView()
@@ -30,9 +30,9 @@ final class ConditionSettingViewController: UIViewController {
         cell.updateLabelText(conditionTitle: value, conditionValue: "")
     }
     
-    convenience init(conditionSettingModel model: ConditionSettingModel) {
+    convenience init(conditionSettingModel model: ConditionSettingUseCase) {
         self.init()
-        self.model = model
+        self.useCase = model
     }
         
     override func viewDidLoad() {

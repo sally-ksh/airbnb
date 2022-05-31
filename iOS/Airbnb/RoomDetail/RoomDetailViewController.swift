@@ -2,10 +2,10 @@ import UIKit
 
 final class RoomDetailViewController: UIViewController {
     
-    private let model: RoomDetailModel
+    private let useCase: RoomDetailUseCase
     
-    init(model: RoomDetailModel) {
-        self.model = model
+    init(useCase: RoomDetailUseCase) {
+        self.useCase = useCase
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -14,21 +14,20 @@ final class RoomDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupViews()
-        model.initialize()
+        useCase.initialize()
         bindView()
     }
     
     private func bindView() {
-        self.model.roomDetail.bind { [weak self] data in
+        self.useCase.roomDetail.bind { [weak self] data in
             self?.titleLabel.text = data.title
         }
         
-        self.model.image.bind { [weak self] imageData in
+        self.useCase.image.bind { [weak self] imageData in
             self?.imageView.image = UIImage(data: imageData)
         }
     }

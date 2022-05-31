@@ -1,7 +1,7 @@
 import Foundation
 import GooglePlaces
 
-class PositionSearchModel {
+class PositionSearchUseCase {
 
     private let token = GMSAutocompleteSessionToken()
     private let client = GMSPlacesClient()
@@ -39,20 +39,13 @@ class PositionSearchModel {
     }
     
     func fetchPredctionList(searchText: String) {
-        let dispatchGroup = DispatchGroup()
-        
-        dispatchGroup.enter()
         var predictions: [String:String] = [:]
         client.findAutocompletePredictions(fromQuery: searchText,
                                            filter: nil,
                                            sessionToken: token) { results, error in
             if error != nil { return }
             results?.forEach { predictions[$0.attributedPrimaryText.string] = $0.placeID }
-            dispatchGroup.leave()
-        }
-        
-        dispatchGroup.notify(queue: .main) { [weak self] in
-            self?.updateSearchResults(predictions: predictions)
+            self.updateSearchResults(predictions: predictions)
         }
     }
     

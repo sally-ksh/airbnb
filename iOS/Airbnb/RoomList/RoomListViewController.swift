@@ -76,8 +76,8 @@ extension RoomListViewController: UICollectionViewDataSource {
 
 extension RoomListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailModel = RoomDetailModel(roomId: 1, repository: RoomDetailRepository())
-        let viewController = RoomDetailViewController(model: detailModel)
+        let detailUseCase = RoomDetailUseCase(roomId: 1, repository: RoomDetailRepository())
+        let viewController = RoomDetailViewController(useCase: detailUseCase)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -2,7 +2,7 @@ import UIKit
 
 class PositionSearchViewController: UIViewController {
     
-    private let model = PositionSearchModel(PositionSearchFactory(categoryCount: 9, dataCount: 9))
+    private let model = PositionSearchUseCase(PositionSearchFactory(categoryCount: 9, dataCount: 9))
     
     private lazy var searchContoller: UISearchController = {
         let searchController = UISearchController()
@@ -57,7 +57,7 @@ extension PositionSearchViewController: UITableViewDataSource {
 extension PositionSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.model.searchPositionInfo(index: indexPath.row) { searchCondition in
-            let model = ConditionSettingModel(searchCondition: searchCondition)
+            let model = ConditionSettingUseCase(searchCondition: searchCondition)
             self.navigationController?.pushViewController(ConditionSettingViewController(conditionSettingModel: model), animated: true)
             
         }

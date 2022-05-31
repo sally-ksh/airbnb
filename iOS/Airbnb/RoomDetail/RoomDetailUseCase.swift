@@ -1,6 +1,6 @@
 import Foundation
 
-class RoomDetailModel {
+class RoomDetailUseCase {
     
     private let repository: RoomDetailRepository
     private let roomId: UniqueID

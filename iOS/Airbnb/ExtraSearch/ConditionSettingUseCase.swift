@@ -18,7 +18,7 @@ struct SearchCondition {
     }
 }
 
-struct ConditionSettingModel {
+struct ConditionSettingUseCase {
     
     private var searchCondition = Observable<SearchCondition>(SearchCondition())
     
