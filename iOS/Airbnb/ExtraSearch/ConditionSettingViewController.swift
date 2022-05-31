@@ -2,6 +2,8 @@ import UIKit
 
 final class ConditionSettingViewController: UIViewController {
     
+    private var model: ConditionSettingModel?
+    
     private lazy var dummyView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -28,6 +30,11 @@ final class ConditionSettingViewController: UIViewController {
         cell.updateLabelText(conditionTitle: value, conditionValue: "")
     }
     
+    convenience init(conditionSettingModel model: ConditionSettingModel) {
+        self.init()
+        self.model = model
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
