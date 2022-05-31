@@ -10,25 +10,32 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import team07.airbnb.room.Room;
 import team07.airbnb.user.User;
 
 @Entity
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of = "wishlistId")
 @NoArgsConstructor
+@ToString(exclude = {"user", "room"})
 public class Wishlist {
-
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long wishlistId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
     private User user;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ROOM_ID")
     private Room room;
 
+    public Wishlist(User user, Room room) {
+        this.user = user;
+        this.room = room;
+    }
+
+    public Long guestId() {
+        return user.getUserId();
+    }
 
 }
-
-//목록조회 -> isDeleted
-//위시리스트..
