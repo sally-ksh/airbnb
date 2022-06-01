@@ -1,7 +1,7 @@
 import UIKit
 
 
-class SearchResultRoomsViewController: UIViewController {
+class RoomListViewController: UIViewController {
 
     private let dummy = ["cozy house", "private room", "party room"]
     
@@ -11,12 +11,13 @@ class SearchResultRoomsViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: self.view.frame.size.width, height: 200)
         
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(SearchResultRoomCell.self, forCellWithReuseIdentifier: "SearchResultRoomCell")
-        cv.backgroundColor = .orange
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.dataSource = self
-        return cv
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(SearchResultRoomCell.self, forCellWithReuseIdentifier: "SearchResultRoomCell")
+        collectionView.backgroundColor = .orange
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        return collectionView
     }()
     
     private lazy var mapButton: UIButton = {
@@ -62,16 +63,25 @@ class SearchResultRoomsViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDataSource
-extension SearchResultRoomsViewController: UICollectionViewDataSource {
+extension RoomListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultRoomCell", for: indexPath) as!SearchResultRoomCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultRoomCell", for: indexPath) as? SearchResultRoomCell else { return UICollectionViewCell() }
         return cell
     }
 }
+
+extension RoomListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailUseCase = RoomDetailUseCase(roomId: 1, repository: RoomDetailRepository())
+        let viewController = RoomDetailViewController(useCase: detailUseCase)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 
 // MARK: - SearchResultRoomCell
 class SearchResultRoomCell: UICollectionViewCell {

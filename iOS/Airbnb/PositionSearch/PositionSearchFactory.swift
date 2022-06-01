@@ -2,11 +2,11 @@ import Foundation
 
 struct PositionSearchFactory {
     private (set)var categories: [RoomPositionCategory] = []
-    private (set)var datas: [RoomPosition] = []
+    private (set)var dataList: [RoomPosition] = []
     
     init(categoryCount: Int, dataCount: Int) {
         self.categories = generateCategories(count: categoryCount)
-        self.datas = generateDatas(count: dataCount)
+        self.dataList = generateDatas(count: dataCount)
     }
         
     func generateCategories(count: Int) -> [RoomPositionCategory] {

@@ -38,15 +38,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setLayout() {
-        mapBackgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
-        mapBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        mapBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        mapBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        mapView.topAnchor.constraint(equalTo: mapBackgroundView.topAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: mapBackgroundView.bottomAnchor).isActive = true
-        mapView.leadingAnchor.constraint(equalTo: mapBackgroundView.leadingAnchor).isActive = true
-        mapView.trailingAnchor.constraint(equalTo: mapBackgroundView.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            mapBackgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            mapBackgroundView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mapBackgroundView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mapBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            mapView.topAnchor.constraint(equalTo: mapBackgroundView.topAnchor),
+            mapView.bottomAnchor.constraint(equalTo: mapBackgroundView.bottomAnchor),
+            mapView.leadingAnchor.constraint(equalTo: mapBackgroundView.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: mapBackgroundView.trailingAnchor)
+        ])
     }
     
     private func configureMap() {
@@ -58,14 +61,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         addMarker(coordinate: mapView.camera.target, title: "코드스쿼드", snippet: "코드스쿼드")
     }
     
-    private func moveToCurrentLocation() {
-        if markers.count >= 2 { markers.popLast()?.map = nil }
-        guard let coordinate = locationManager.location?.coordinate else { return }
-        let camera = GMSCameraPosition(target: coordinate, zoom: 16)
-        mapView.camera = camera
-        
-        addMarker(coordinate: coordinate, title: "현재 위치", snippet: "현재 위치")
-    }
     
     //위치값 입력받아서, 해당 위치에 마커 추가
     private func addMarker(coordinate: CLLocationCoordinate2D, title: String, snippet: String) {
@@ -91,6 +86,5 @@ extension MapViewController: GMSMapViewDelegate {
         let topRight = mapView.projection.visibleRegion().farRight
         let bottomleft = mapView.projection.visibleRegion().nearLeft
         let bottomRight = mapView.projection.visibleRegion().nearRight
-        print("좌측 상단:\(topLeft.longitude),\(topLeft.latitude)\n우측 상단:\(topRight.longitude),\(topRight.latitude)\n좌측 하단:\(bottomleft.longitude),\(bottomleft.latitude)\n우측 하단:\(bottomRight.longitude),\(bottomRight.latitude)")
     }
 }

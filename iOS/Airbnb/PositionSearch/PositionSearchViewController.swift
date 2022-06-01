@@ -1,8 +1,8 @@
 import UIKit
 
 class PositionSearchViewController: UIViewController {
-
-    private let model = PositionSearchModel(PositionSearchFactory(categoryCount: 9, dataCount: 9))
+    
+    private let model = PositionSearchUseCase(PositionSearchFactory(categoryCount: 9, dataCount: 9))
     
     private lazy var searchContoller: UISearchController = {
         let searchController = UISearchController()
@@ -10,6 +10,7 @@ class PositionSearchViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
         return searchController
     }()
     
@@ -55,13 +56,18 @@ extension PositionSearchViewController: UITableViewDataSource {
 
 extension PositionSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ConditionSettingViewController(), animated: true)
+        self.model.searchPositionInfo(index: indexPath.row) { searchCondition in
+            let model = ConditionSettingUseCase(searchCondition: searchCondition)
+            self.navigationController?.pushViewController(ConditionSettingViewController(conditionSettingModel: model), animated: true)
+            
+        }
     }
 }
 
 extension PositionSearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        model.updateSearchResults(searchText: searchController.searchBar.text)
+        guard let searchText = searchController.searchBar.text else { return }
+        self.model.fetchPredctionList(searchText: searchText)
     }
 }
 

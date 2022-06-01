@@ -2,6 +2,8 @@ import UIKit
 
 final class ConditionSettingViewController: UIViewController {
     
+    private var useCase: ConditionSettingUseCase?
+    
     private lazy var dummyView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -28,6 +30,11 @@ final class ConditionSettingViewController: UIViewController {
         cell.updateLabelText(conditionTitle: value, conditionValue: "")
     }
     
+    convenience init(conditionSettingModel model: ConditionSettingUseCase) {
+        self.init()
+        self.useCase = model
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -69,7 +76,7 @@ final class ConditionSettingViewController: UIViewController {
     
     //추후 검색 결과 리스트 보여주는 화면으로 넘어가는 로직으로 대체해야 함
     @objc private func pushNextViewController() {
-        self.navigationController?.pushViewController(SearchResultRoomsViewController(), animated: true)
+        self.navigationController?.pushViewController(RoomListViewController(), animated: true)
     }
 }
 
