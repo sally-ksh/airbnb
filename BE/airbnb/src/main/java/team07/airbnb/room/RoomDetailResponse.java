@@ -2,7 +2,6 @@ package team07.airbnb.room;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import team07.airbnb.address.Address;
@@ -12,7 +11,6 @@ import team07.airbnb.wishlist.Wishlist;
 @Getter
 @AllArgsConstructor
 public class RoomDetailResponse {
-
     private Long roomId;
     private List<String> images;
     @JsonProperty("isWished")
@@ -20,7 +18,7 @@ public class RoomDetailResponse {
     private String title;
     private double averageOfStar;
     private int numberOfReviews;
-    private Address address;
+    private String address;
     private String hostName;
     private String profileOfHost; //이미지링크
     private int maxNumberOfPeople;
@@ -38,7 +36,7 @@ public class RoomDetailResponse {
             room.getRoomName(),
             4.8, // 수정필요
             127, //수정필요
-            room.getAddress(),
+            room.getAddress().divisions(),
             room.hostProfile().getNickname(),
             room.hostProfile().getProfileImage(),
             room.getMaxNumberOfGuest(),
@@ -50,8 +48,7 @@ public class RoomDetailResponse {
     }
 
     private static boolean isUserWishRoom(List<Wishlist> wishlists, Long userId) {
-        return wishlists.stream().map(i -> i.guestId() == userId).findAny().get();
+        return wishlists.stream()
+            .anyMatch(wishlist -> wishlist.guestId() == userId);
     }
-
-
 }
