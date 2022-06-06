@@ -1,12 +1,13 @@
 package team07.airbnb.search;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import team07.airbnb.reservation.Period;
@@ -24,16 +25,19 @@ public class SearchDto {
 		private int minPrice;
 		private int maxPrice;
 		private int guestAmount;
-		private int infantAmount;
 
 		public SearchParam toSearchParam() {
-			Period period = Period.of(checkinDate, checkoutDate);
 			return new SearchParam(
-				location,
-				period,
-				getSearchPrice(period),
+				location.trim(),
+				checkinDate,
+				checkoutDate,
+				getSearchPrice(getPeriod()),
 				guestAmount
 			);
+		}
+
+		public Period getPeriod() {
+			return Period.of(checkinDate, checkoutDate);
 		}
 
 		private SearchPrice getSearchPrice(Period period) {
@@ -48,37 +52,37 @@ public class SearchDto {
 
 	public static class RoomsResponse {
 		private final int numberOfRooms;
-		private final List<RoomCard> rooms = new ArrayList<>();
+		private final List<RoomCard> rooms;
 
-		public RoomsResponse(int numberOfRooms) {
+		public RoomsResponse(int numberOfRooms, List<RoomCard> rooms) {
 			this.numberOfRooms = numberOfRooms;
+			this.rooms = rooms;
 		}
 	}
 
+	@Data
 	public static class RoomCard {
-		private final Long roomId;
-		private final String roomName;
-		private final int price;
-		private final int totalPrice;
-		private final String thumbnailImage;
-		private final String averageOfStar;
-		private final int numberOfReviews;
-		private final boolean isWished;
-		private final String latitude;
-		private final String logitude;
+		private Long roomId;
+		private String roomName;
+		private int price;
+		private int totalPrice;
+		private String thumbnailImage;
+		private boolean isWished;
+		private BigDecimal latitude;
+		private BigDecimal longitude;
 
+		@Builder
 		public RoomCard(Long roomId, String roomName, int price, int totalPrice, String thumbnailImage,
-			String averageOfStar, int numberOfReviews, boolean isWished, String latitude, String logitude) {
+			boolean isWished,
+			BigDecimal latitude, BigDecimal longitude) {
 			this.roomId = roomId;
 			this.roomName = roomName;
 			this.price = price;
 			this.totalPrice = totalPrice;
 			this.thumbnailImage = thumbnailImage;
-			this.averageOfStar = averageOfStar;
-			this.numberOfReviews = numberOfReviews;
 			this.isWished = isWished;
 			this.latitude = latitude;
-			this.logitude = logitude;
+			this.longitude = longitude;
 		}
 	}
 }
