@@ -10,4 +10,4 @@ oauth:
 
 jwt:
   secret-key: ${jwt_secret}
-  expire-length: ${jwt_expire-length}
+  expire-length: ${jwt_expire_length}
