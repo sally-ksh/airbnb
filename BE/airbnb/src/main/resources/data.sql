@@ -1,5 +1,5 @@
 
-insert into user
+insert into USER
 (USERNAME, USER_EMAIL, USER_PHONE, USER_ROLE, PROFILE_IMAGE)
 values
     ('sally', 'sally@email.com', '010-1234-1234', 'GUEST', 'https://sally-airbnb.s3.ap-northeast-2.amazonaws.com/%ED%98%B8%EC%8A%A4%ED%8A%B8+%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%8C%8C%EC%9D%B4%ED%8C%85.png'),
