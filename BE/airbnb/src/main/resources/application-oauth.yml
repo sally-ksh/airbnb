@@ -7,3 +7,7 @@ oauth:
   provider:
     token-url: https://github.com/login/oauth/access_token
     user-info-url: https://api.github.com/user
+
+jwt:
+  secret-key: ${jwt_secret}
+  expire-length: ${jwt_expire-length}
