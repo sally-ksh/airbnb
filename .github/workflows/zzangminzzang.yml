@@ -33,7 +33,7 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - name: Build with Gradle
-        run: ./gradlew compileQuerydsl
+        run: ./gradlew clean bootJar
         working-directory: ${{env.working-directory}}
 
       - name: Build and Push Docker Image
