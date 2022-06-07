@@ -13,18 +13,16 @@ import java.util.Map;
 public class OauthController {
 
     private final OauthService oauthService;
+    private final JwtProvider jwtProvider;
 
     @GetMapping("/login/oauth")
-    public String oauthGithub(@RequestParam String code) {
-
+    public ResponseEntity<LoginResponse> oauthGithub(@RequestParam String code) {
         String accessToken = oauthService.generateAccessToken(code);
-        System.out.println("accessToken = " + accessToken);
         Map<String, String> userAttributes = oauthService.getUserAttributes(accessToken);
-        System.out.println("userAttributes = " + userAttributes);
-        LoginResponse loginResponse = new LoginResponse(userAttributes.get("login"), userAttributes.get("avatar_url"), userAttributes.get("email"), "JWT");
-        System.out.println("loginResponse = " + loginResponse);
-        //return ResponseEntity.ok().body(loginResponse);
-        return "123";
+        String gitJWT = jwtProvider.createToken("gitJWT");
+
+        LoginResponse loginResponse = new LoginResponse(userAttributes.get("login"),userAttributes.get("avatar_url"), userAttributes.get("email"), gitJWT);
+        return ResponseEntity.ok().body(loginResponse);
     }
 
 
