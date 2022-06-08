@@ -15,10 +15,19 @@ public class SearchService {
 
 	public SearchDto.RoomsResponse findRoomsOfRegion(SearchDto.LocationRequest request) {
 		Period period = request.getPeriod();
-		List<SearchRoomDto> searchRoomDtos = searchRepository.searchLocation(request.toSearchParam());
+
+		List<SearchReservationRoomDto> reservationDate = searchRepository.findByReservationDate(period);
+		List<SearchRoomDto> searchRoomDtos = searchRepository.searchLocation(request.toSearchParam(), toIdList(reservationDate));
+
 		return new SearchDto.RoomsResponse(
 			searchRoomDtos.size(),
 			toRoomCards(period, searchRoomDtos));
+	}
+
+	private List<Long> toIdList(List<SearchReservationRoomDto> reservationDate) {
+		return reservationDate.stream()
+			.map(SearchReservationRoomDto::getRoomId)
+			.collect(Collectors.toList());
 	}
 
 	private List<SearchDto.RoomCard> toRoomCards(Period period, List<SearchRoomDto> searchRoomDtos) {
