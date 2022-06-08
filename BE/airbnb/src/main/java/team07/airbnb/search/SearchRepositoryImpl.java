@@ -12,11 +12,11 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.EntityManager;
+
+import team07.airbnb.reservation.Period;
 
 @Repository
 public class SearchRepositoryImpl implements SearchRepository{
@@ -27,7 +27,19 @@ public class SearchRepositoryImpl implements SearchRepository{
 	}
 
 	@Override
-	public List<SearchRoomDto> searchLocation(SearchParam searchParam) {
+	public List<SearchReservationRoomDto> findByReservationDate(Period period) {
+		return queryFactory
+			.select(new QSearchReservationRoomDto(
+				reservation.room.id.as("roomId"))
+			).from(reservation)
+			.where(startAtBetween(period)
+				.and(endAtBetween(period))
+				.or(startAtLoeAndEndAtGoe(period))
+			).fetch();
+	}
+
+	@Override
+	public List<SearchRoomDto> searchLocation(SearchParam searchParam, List<Long> roomIds) {
 		return queryFactory
 			.select(new QSearchRoomDto(
 				room.id.as("roomId"),
@@ -40,32 +52,34 @@ public class SearchRepositoryImpl implements SearchRepository{
 			.innerJoin(image).on(room.id.eq(image.room.id))
 			.leftJoin(wishlist).on(room.id.eq(wishlist.room.id))
 			.where(
-				locationEq(searchParam.getLocation()),
-				dateGoe(searchParam.getStartAt()),
-				dateLoe(searchParam.getEndAt()),
+				image.imageOrder.eq(1),
+				room.id.notIn(roomIds),
+				locationStartWith(searchParam.getLocation()),
 				priceGoe(searchParam.getMinPrice()),
 				priceLoe(searchParam.getMaxPrice()),
-				peoplesGoe(searchParam.getGuestAmount()),
-				image.imageOrder.eq(1)
+				peoplesGoe(searchParam.getGuestAmount())
 				)
 			.fetch();
-
-
 	}
-	private BooleanExpression locationEq(String location) {
+
+	private BooleanExpression startAtLoeAndEndAtGoe(Period period) {
+		return reservation.startAt.loe(period.startAt()).and(reservation.endAt.goe(period.endAt()));
+	}
+
+	private BooleanExpression endAtBetween(Period period) {
+		return reservation.endAt.between(period.startAt(), period.endAt());
+	}
+
+	private BooleanExpression startAtBetween(Period period) {
+		return reservation.startAt.between(period.startAt(), period.endAt());
+	}
+
+	private BooleanExpression locationStartWith(String location) {
 		return StringUtils.hasText(location) ?
 			room.address.roomCity.contains(location)
-			.or(room.address.roomState.contains(location))
-			.or(room.address.roomCity.contains(location))
-			: null;
-	}
-
-	private BooleanExpression dateGoe(LocalDate startAt) {
-		return Objects.isNull(startAt) ? null : reservation.startAt.eq(startAt);
-	}
-
-	private BooleanExpression dateLoe(LocalDate endAt) {
-		return Objects.isNull(endAt) ? null : reservation.endAt.eq(endAt);
+				.or(room.address.roomState.contains(location))
+				.or(room.address.roomCity.contains(location))
+			: room.address.roomCountry.eq("한국");
 	}
 
 	private BooleanExpression priceGoe(int minPrice) {
@@ -80,3 +94,16 @@ public class SearchRepositoryImpl implements SearchRepository{
 		return guestAmount > 0 ? room.maxNumberOfGuest.goe(guestAmount) : null;
 	}
 }
+
+/*  // client? repository?
+	private BooleanExpression startAtGoe(LocalDate startAt) {
+		return Objects.isNull(startAt) ?
+			reservation.startAt.goe(LocalDate.now())
+			: reservation.startAt.goe(startAt);
+	}
+
+	private BooleanExpression dateLoe(LocalDate endAt) {
+		return Objects.isNull(endAt) ?
+			reservation.endAt.loe(LocalDate.now().plusDays(30))
+			: reservation.endAt.loe(endAt);
+	}*/
